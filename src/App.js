@@ -15,7 +15,8 @@ function App() {
       children:[
        
         {
-          path:'/topic',
+          path:'/',
+          loader:()=>fetch("quizdata.json"),
           element:<Topic></Topic>
         },
         
