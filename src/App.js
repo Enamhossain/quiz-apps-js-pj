@@ -2,9 +2,10 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Blog from './component/Blog/Blog';
-import Header from './component/Header/Header';
+import JavascriptQuiz from './component/JavascriptQuiz/JavascriptQuiz';
 import Statistics from './component/Statis/Statistics';
 import Topic from './component/Topic/Topic';
+
 import Main from './Layout/Main';
 
 function App() {
@@ -16,8 +17,10 @@ function App() {
        
         {
           path:'/',
-          loader:()=>fetch("quizdata.json"),
-          element:<Topic></Topic>
+          loader:()=>fetch(' https://openapi.programming-hero.com/api/quiz '),
+          element:<Topic></Topic>,
+         
+          
         },
         
         {
@@ -28,18 +31,24 @@ function App() {
           path:'/blog',
           element:<Blog></Blog>
         },
-
+        {
+          path:'/topcis/:topcisId',
+          loader:async({params})=>{
+           return fetch(`https://openapi.programming-hero.com/api/quiz/${params.topcisId}`)
+          },
+          element:<JavascriptQuiz/>
+          
+        },
+        
+       
       ]
     },
-    {
-      path:'/',
-      element:<Header></Header>
-    },
      
+   
   ])
   return (
     <div className="App">
-        
+         
          <RouterProvider router={router}></RouterProvider> 
     </div>
   );

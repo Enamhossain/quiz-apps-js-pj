@@ -4,15 +4,16 @@ import Topics from '../Topics/Topics';
 
 const Topic = () => {
     const quizTopic=useLoaderData()
-    //   console.log(quizTopic)
+      console.log(quizTopic.data)
+      
     return (
-        <div className="grid gap-4 grid-cols-3 grid-rows-3">
+        <div className="grid grid-cols-3 gap-4 container mx-auto ">
              {
-                quizTopic.map(topcis => <Topics
+                quizTopic.data.map(topcis => <Topics
                 key={topcis.id}
                 topcis = {topcis}
                 ></Topics>)
-             }
+             } 
         </div>
     );
 };
