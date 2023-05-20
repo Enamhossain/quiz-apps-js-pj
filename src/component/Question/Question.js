@@ -6,8 +6,6 @@ import './ps.css'
 const Question = ({qz,index}) => {
      const {question,options,correctAnswer,id}=qz
     
-    
-     
     return (
         <div className='border-solid border-2  rounded-md shadow mt-5 pb-5'>
              <h1 className='font-bold text-center'>Quiz {index + 1}{question}</h1>

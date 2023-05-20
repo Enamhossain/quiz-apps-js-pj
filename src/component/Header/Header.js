@@ -3,7 +3,7 @@ import img from "./img.svg"
 
 const Header = () => {
     return (
-        <div className='md:flex  content-center container mx-auto justify-around bg-sky-300'>
+        <div className='md:flex   container mx-auto justify-around '>
            
             <div className='font-bold mt-32 text-3xl mx-5 p-8'>
                  
